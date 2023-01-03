@@ -10,14 +10,14 @@ puzzle as a gift. Here's my attempt to solve it with code!
 
 > Turn the dials until each of the 12 columns add up to 42.
 
-The `puzzle.json` file contains a JSON "serialized" version of the puzzle. Each
-array element represents a rotatable dial within the puzzle. The elements are
+The `puzzle.json` file contains a JSON serialized version of the puzzle. Each
+array element represents a rotatable dial within the puzzle. The dials are
 ordered from top to bottom (smaller dials at the top, larger dials at the
 bottom). This order is significant as some dials contain cutouts that show the
 numbers of the dials below them.
 
-Each dial contains at least one level. Each level contains an array of exactly
-12 elements.  These elements may be numbers (integers) or `null` to represent a
+Each dial contains at least one level. Each level is an array of exactly 12
+elements. These elements may be numbers (integers) or `null` to represent a
 cutout in the dial. The array can be seen as a circular array where the first
 element is adjacent to the last element.
 
@@ -30,3 +30,4 @@ might apply to this problem.
 ## The solution
 
 TBD
+
