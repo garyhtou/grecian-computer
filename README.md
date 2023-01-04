@@ -138,7 +138,7 @@ fn solve(puzzle: &mut Puzzle) -> Result<Puzzle, Box<dyn Error>> {
       for _ in 0..NUM_COLUMNS {
         for _ in 0..NUM_COLUMNS {
           if validate(&puzzle) {
-            // Return if the puzzle as solved
+            // Return if the puzzle was solved
             return Ok(*puzzle);
           }
           // rotate level
