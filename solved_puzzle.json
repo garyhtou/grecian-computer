@@ -1,0 +1,32 @@
+[
+	{
+		"zero": [3, null, 6, null, 10, null, 7, null, 15, null, 8, null],
+		"one": null,
+		"two": null,
+		"three": null
+	},
+	{
+		"zero": [3, null, 6, null, 11, 11, 6, 11, null, 6, 17, 7],
+		"one": [null, 7, 15, null, null, 14, null, 9, null, 12, null, 4],
+		"two": null,
+		"three": null
+	},
+	{
+		"zero": [5, null, 7, 8, 9, 13, 9, 7, 13, 21, 17, 4],
+		"one": [14, 1, 12, null, 21, 6, 15, 4, 9, 18, 11, 26],
+		"two": [16, null, 9, null, 5, null, 10, null, 8, null, 22, null],
+		"three": null
+	},
+	{
+		"zero": [9, null, 7, 14, 11, null, 8, null, 16, 2, 7, null],
+		"one": [12, 3, 6, null, 14, 12, 3, 8, 9, null, 9, 20],
+		"two": [6, null, 2, 13, 9, null, 17, 19, 3, 12, 3, 26],
+		"three": [9, null, 12, null, 6, null, 10, null, 10, null, 1, null]
+	},
+	{
+		"zero": [14, 14, 11, 14, 11, 14, 11, 11, 14, 11, 14, 11],
+		"one": [10, 11, 12, 13, 14, 15, 4, 5, 6, 7, 8, 9],
+		"two": [14, 14, 21, 21, 9, 9, 4, 4, 6, 6, 3, 3],
+		"three": [10, 7, 16, 8, 7, 8, 8, 3, 4, 12, 2, 5]
+	}
+]
