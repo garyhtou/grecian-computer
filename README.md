@@ -182,11 +182,13 @@ and serialize the solved puzzle.
 ## The solution
 
 ```
-Dial 0:   3  14   6   8  10  11   7  11  15   6   8   7 
-Dial 1:  14   7  15  13  21  14  15   9   9  12  11   4 
-Dial 2:  16  14   9  13   5   9  10  19   8  12  22  26 
-Dial 3:   9   7  12   8   6   8  10   3  10  12   1   5 
+Dial 0:   3  14   6   8  10  11   7  11  15   6   8   7
+Dial 1:  14   7  15  13  21  14  15   9   9  12  11   4
+Dial 2:  16  14   9  13   5   9  10  19   8  12  22  26
+Dial 3:   9   7  12   8   6   8  10   3  10  12   1   5
 
 Dial 0 is the smallest (at the top)
 Dial 3 is the largest (at the bottom)
 ```
+
+![Solved Grecian Computer Puzzle](https://user-images.githubusercontent.com/20099646/210469135-87fec34e-89a8-4f5b-9343-434960a238ab.png)
