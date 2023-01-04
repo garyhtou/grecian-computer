@@ -51,7 +51,7 @@ const NUM_LEVELS: usize = 4; // A level is a row (circle) of numbers on a dial
 Next up, using these constants, we can define the types for the puzzle.
 
 ```rust
-type Puzzle = [Dial; 5]; // A puzzle is an array of 5 dials
+type Puzzle = [Dial; NUM_DIALS]; // A puzzle is an array of 5 dials
 
 #[derive(Clone, Copy, Serialize, Deserialize, Debug)] // I'm not too familiar with Rust's derive macros, but this lets us use serde to serialize and deserialize the puzzle (as well as copy the object).
 struct Dial { // A dial is composed to 4 levels, with each level being optional.
@@ -61,7 +61,7 @@ struct Dial { // A dial is composed to 4 levels, with each level being optional.
   three: Option<Level>,
 }
 
-type Level = [Option<u32>; 12]; // A level is an array of 12 numbers (or nulls)
+type Level = [Option<u32>; NUM_COLUMNS]; // A level is an array of 12 numbers (or nulls)
 ```
 
 Now that we have the types defined, we can deserialize the puzzle using `serde`.

@@ -5,7 +5,7 @@ const NUM_COLUMNS: usize = 12;
 const NUM_DIALS: usize = 5;
 const NUM_LEVELS: usize = 4;
 
-type Puzzle = [Dial; 5];
+type Puzzle = [Dial; NUM_DIALS];
 
 #[derive(Clone, Copy, Serialize, Deserialize, Debug)]
 struct Dial {
@@ -15,7 +15,7 @@ struct Dial {
     three: Option<Level>,
 }
 
-type Level = [Option<u32>; 12];
+type Level = [Option<u32>; NUM_COLUMNS];
 
 fn main() {
     println!("Grecian Puzzle!");
