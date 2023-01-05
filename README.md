@@ -1,12 +1,14 @@
+![Grecian Computer Banner](https://user-images.githubusercontent.com/20099646/210719678-c7edc0b0-da00-4f89-b9bb-6f202e16783b.png)
+
 # Grecian Computer
 
 I received the [`Grecian
 Computer`](https://projectgeniusinc.com/grecian-computer/) wood brainteaser
 puzzle as a gift. Here's my attempt to solve it with code!
 
-![puzzle image](https://m.media-amazon.com/images/I/91-AcA-07gL.jpg)
-
 ## The puzzle
+
+<img src='https://m.media-amazon.com/images/I/91-AcA-07gL.jpg' align='right' width='200'/>
 
 > Turn the dials until each of the 12 columns add up to 42.
 
