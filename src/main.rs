@@ -110,25 +110,7 @@ fn read_puzzle() -> Result<Puzzle, Box<dyn Error>> {
     let file = File::open("puzzle.json")?;
     let reader = BufReader::new(file);
     let puzzle: Puzzle = serde_json::from_reader(reader)?;
-    verify(&puzzle);
     Ok(puzzle)
-}
-
-/// Just a sanity check to make sure the puzzle is valid
-fn verify(puzzle: &Puzzle) {
-    // assert 5 dials
-    assert_eq!(puzzle.len(), NUM_DIALS);
-
-    for dial in puzzle.iter() {
-        // Put level in array and remove none
-        let levels = [dial.zero, dial.one, dial.two, dial.three];
-        let levels = levels.iter().filter(|x| x.is_some());
-
-        // Assert each level has 12 elements
-        for level in levels {
-            assert_eq!(level.unwrap().len(), NUM_COLUMNS);
-        }
-    }
 }
 
 /// Serialize the solved puzzle to a file

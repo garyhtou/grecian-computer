@@ -56,7 +56,7 @@ Next up, using these constants, we can define the types for the puzzle.
 type Puzzle = [Dial; NUM_DIALS]; // A puzzle is an array of 5 dials
 
 #[derive(Clone, Copy, Serialize, Deserialize, Debug)] // I'm not too familiar with Rust's derive macros, but this lets us use serde to serialize and deserialize the puzzle (as well as copy the object).
-struct Dial { // A dial is composed to 4 levels, with each level being optional.
+struct Dial { // A dial is composed of 4 levels, with each level being optional.
   zero: Option<Level>,
   one: Option<Level>,
   two: Option<Level>,
@@ -78,17 +78,16 @@ fn read_puzzle() -> Result<Puzzle, Box<dyn Error>> {
   let file = File::open("puzzle.json")?;
   let reader = BufReader::new(file);
   let puzzle: Puzzle = serde_json::from_reader(reader)?;
-  verify(&puzzle);
   Ok(puzzle)
 }
 ```
 
-Next up, I wrote a `verify` function is just a sanity check to make sure that
-the puzzle is somewhat valid. For example, it makes sure all levels have exactly
-12 elements.
+`serde` already guarantees the shape we need here: since `Level` is the
+fixed-size array type `[Option<u32>; NUM_COLUMNS]`, deserializing a JSON array
+with the wrong number of elements fails right here in `from_reader`, so there's
+no need for a separate sanity check afterwards.
 
-This isn't really necessary for solving the puzzle, so see
-[`main.rs`](src/main.rs) for the full code.
+See [`main.rs`](src/main.rs) for the full code.
 
 #### `solve()`
 
@@ -184,13 +183,13 @@ and serialize the solved puzzle.
 ## The solution
 
 ```
-Dial 0:   3  14   6   8  10  11   7  11  15   6   8   7
-Dial 1:  14   7  15  13  21  14  15   9   9  12  11   4
-Dial 2:  16  14   9  13   5   9  10  19   8  12  22  26
-Dial 3:   9   7  12   8   6   8  10   3  10  12   1   5
+Level 0:   3  14   6   8  10  11   7  11  15   6   8   7
+Level 1:  14   7  15  13  21  14  15   9   9  12  11   4
+Level 2:  16  14   9  13   5   9  10  19   8  12  22  26
+Level 3:   9   7  12   8   6   8  10   3  10  12   1   5
 
-Dial 0 is the smallest (at the top)
-Dial 3 is the largest (at the bottom)
+Level 0 is the topmost ring
+Level 3 is the bottommost ring
 ```
 
 ![Solved Grecian Computer Puzzle](https://user-images.githubusercontent.com/20099646/210469135-87fec34e-89a8-4f5b-9343-434960a238ab.png)
